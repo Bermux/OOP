@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+class Administrador  {  
+    public function saludar() {
+        echo "Hola Señor>> " . $this->usuario;
+    }
+    public function suspender($usuario) {
+        echo $usuario->usuario . " ha suspendido";
+    }
+}
+$admin = new Administrador;
+$admin->usuario = "Profe10Mates <BR>";
+$admin->saludar(); 	
+
+class Usuario {
+    public $usuario;
+    public $password;
+    public function saludar() {
+        echo 'Ablemos de las notas de ' . $this->usuario ;
+    }
+}
+$juan = new Usuario;
+$juan->usuario = 'Juan <BR>';
+$juan->saludar();
+    
+class Perfil {
+	public $calificiones;
+    public static $NºCalificacionesExamenes = 4;
+    		
+    public static function validarNota ($nota) {
+    	if(strlen($nota) >= self::$NºCalificacionesExamenes){
+        	return true;
+        }else{
+        	return false;
+        }
+    }
+} 
+
+
+if (Perfil::validarNota($nota)){
+	echo "Todos sus exámenes están realizados<br>";
+}else{
+	echo "Le falta por hacer algún examen<br>";
+}
+
+$NºExamenesRealizados= 4;
+$PrimerExamen = 5;
+$SegundoExamen = 3;
+$TercerExamen = 8;
+$CuartoExamen = 4;
+
+	$suma = $PrimerExamen + $SegundoExamen + $TercerExamen + $CuartoExamen;
+	$media = $suma/$NºExamenesRealizados;
+echo "La media de ".$juan->usuario. "es de un "$media."<BR>"; 
+
+?>
+
+</body>
+</html>

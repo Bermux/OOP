@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+class Administrador  {  
+    public function saludar() {
+        echo "Hola Señor>> " . $this->usuario;
+    }
+    public function banear($usuario) {
+        echo $usuario->usuario . " ha sido baneado";
+    }
+}
+$admin = new Administrador;
+$admin->usuario = "Profe10Mates";
+$admin->saludar(); 	
+    
+class Perfil {
+	public $calificiones;
+    public static $NºCalificacionesExamenes = 4;
+    		
+    public static function validarNota ($nota) {
+    	if(strlen($nota) >= self::$NºCalificacionesExamenes){
+        	return true;
+        }else{
+        	return false;
+        }
+    }
+} 
+
+$nota = "5384";
+
+$Usuarios[0]->usuario = "Álvaro";
+$Usuarios[]->usuario = "David";
+$Usuarios[]->usuario = "José";
+$Usuarios[]->usuario = "Alejandro";
+$Usuarios[]->usuario = "María";
+
+
+if ($Usuarios[0]->usuario){
+	echo "Hola $this->usuario;<br>";
+}if ($Usuarios[]->usuario){
+	echo "Hola David<br>";
+}if ($Usuarios[]->usuario){
+	echo "Hola José<br>";
+}if ($Usuarios[]->usuario){
+	echo "Hola Alejandro<br>";
+}if ($Usuarios[]->usuario){
+	echo "Hola María<br>";
+}else{
+	echo"Hola Forastero";
+
+
+if (Perfil::validarNota($nota)){
+	echo "Todos tus exámenes están realizados<br>";
+}else{
+	echo "Te falta por hacer algún examen<br>";
+}
+$NExamenes = 4;
+$PrimerExamen = 5;
+$SegundoExamen = 3;
+$TercerExamen = 8;
+$CuartoExamen = 4;
+
+	$suma = $PrimerExamen + $SegundoExamen + $TercerExamen + $CuartoExamen;
+	$media = $suma/$NExamenes;
+echo "Tu media es de un ". $media."<BR>"; 
+
+
+class Usuario {  
+    public $usuario;
+    public $password;
+    public function saludar() {
+        echo 'Hola ' . $this->usuario;
+    }
+}
+class Administrador extends Usuario {  
+    public function suspender($usuario) {
+        echo $usuario->usuario . " ha suspendido";
+    }
+}
+$usuario = new Usuario;
+$usuario->usuario = 'Álvaro';
+$admin = new Administrador;
+$admin->usuario = 'Profe10Mates';
+$admin->saludar();  
+$admin->banear($usuario); 
+?>
+
+</body>
+</html>

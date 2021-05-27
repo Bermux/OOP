@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+
+class Usuario {  
+    public $usuario;
+    public $password;
+    public function __construct($usuario) {
+        $this->password = '1234';
+        $this->usuario = $usuario;
+    }
+    public function __destruct() {
+        echo 'Muero...';
+    }
+}
+$usuario = new Usuario('juan');
+unset($usuario); // 'Muero...'; 
+ 
+?>
+
+</body>
+</html>
